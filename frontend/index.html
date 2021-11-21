@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PY GARDEN DASHBOARD</title>
+    </head>
+    <body>
+        <h1>TIME</h1>
+
+        <h3 id='odczyt'>
+           <p id='odczytTime'></p>
+        </h3>
+
+     
+
+        <script>
+            var ws = new WebSocket("ws://localhost:8000/");
+            ws.onmessage = function(event) {
+                var odczytTime = document.getElementById('odczytTime')
+                odczytTime.innerHTML = 'Czas ' + event.data
+            };
+
+        </script>
+    </body>
+</html>

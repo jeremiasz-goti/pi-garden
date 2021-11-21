@@ -1,0 +1,8 @@
+version: '1'
+services:
+    api:
+      build: .      
+      ports:
+        - "8000:15900"
+      volumes:
+        - ./api/:/app
